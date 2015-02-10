@@ -1,0 +1,52 @@
+# rusty/expired CCVP alert (Mick.S!)!?
+# all of the below supplied by chadstachowicz via:
+# http://blog.cloverhound.com/2015/02/09/connecting-a-cisco-gateway-to-twilio-elastic-sip-trunking/
+
+sip-ua
+authentication username cloverhound password 7 15431A0D1E0A1C171060302610 realm sip.twilio.com
+registrar dns:cloverhound.pstn.twilio.com expires 3600
+sip-server dns:cloverhound.pstn.twilio.com
+!
+
+voice service voip
+ip address trusted list
+ipv4 54.84.237.137
+ipv4 54.85.131.135
+ipv4 54.85.131.188
+ipv4 54.85.123.45
+ipv4 54.72.246.65
+ipv4 54.77.209.170
+ipv4 54.77.210.162
+allow-connections sip to sip
+fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+sip
+ bind control source-interface GigabitEthernet0/0.100
+ bind media source-interface GigabitEthernet0/0.100
+ registrar server expires max 3600 min 600
+!
+
+voice translation-rule 1
+ rule 1 /^91/ /+1/
+!
+voice translation-rule 2
+ rule 1 /4004/ /9802180971/
+ rule 2 /4002/ /9802180999/
+ rule 3 /4005/ /9802180980/
+!
+!
+voice translation-profile twilio
+ translate calling 2
+ translate called 1
+!
+
+dial-peer voice 200 voip
+translation-profile outgoing twilio
+destination-pattern 91[2-9]..[2-9]......
+session protocol sipv2
+session target sip-server
+dtmf-relay rtp-nte sip-kpml sip-notify
+codec g711ulaw
+no vad
+!
+
+

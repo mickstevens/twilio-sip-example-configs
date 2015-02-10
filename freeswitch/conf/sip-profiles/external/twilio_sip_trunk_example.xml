@@ -1,0 +1,7 @@
+<include>
+  <gateway name="validsipuri.pstn.twilio.com">
+    <param name="username" value="valid twilio credential username"/>
+    <param name="password" value="valid twilio credential password"/>
+    <param name="register" value="false"/>
+  </gateway>
+</include>

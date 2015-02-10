@@ -1,0 +1,26 @@
+<include>
+  <user id="1020">
+    <params>
+      <param name="password" value="sip reg password for user id 1020"/>
+      <param name="vm-password" value="1020"/>
+    </params>
+    <gateways>
+      <gateway name="validtwiliosipuri.sip.twilio.com">-->
+        <param name="username" value="valid twilio credential list user name"/>
+        <param name="password" value="valid twilio credential list password"/> 
+        <param name="register" value="false"/>
+      </gateway>
+    </gateways>
+    <variables>
+      <variable name="toll_allow" value="domestic,international,local"/>
+      <variable name="accountcode" value="1000"/>
+      <variable name="user_context" value="default"/>
+      <variable name="effective_caller_id_name" value="Extension 1020"/>
+      <variable name="effective_caller_id_number" value="1020"/>
+      <variable name="outbound_caller_id_name" value="$${outbound_caller_name}"/>
+      <variable name="outbound_caller_id_number" value="$${outbound_caller_id}"/>
+      <variable name="callgroup" value="your team"/>
+    </variables>
+  </user>
+</include>
+
