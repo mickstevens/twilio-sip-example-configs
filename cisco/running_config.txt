@@ -10,13 +10,19 @@ sip-server dns:cloverhound.pstn.twilio.com
 
 voice service voip
 ip address trusted list
+# US Gateways
 ipv4 54.84.237.137
 ipv4 54.85.131.135
 ipv4 54.85.131.188
 ipv4 54.85.123.45
+# New US Med & Sig IPs WEF 11/03/15
+ipv4 54.172.60.0/23
+# Euro Gateways
 ipv4 54.72.246.65
 ipv4 54.77.209.170
 ipv4 54.77.210.162
+# New Euro Med & Sig IPs WEF 11/03/15
+ipv4 54.171.127.192/26
 allow-connections sip to sip
 fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
 sip
