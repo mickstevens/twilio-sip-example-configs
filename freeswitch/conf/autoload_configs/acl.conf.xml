@@ -34,8 +34,8 @@
       <node type="allow" cidr="54.72.246.65"/>
       <node type="allow" cidr="54.77.209.170"/>
       <node type="allow" cidr="54.77.210.162"/>
-      <!-- New Sig & Med 11/03/15 -->
-      <node type="allow" cidr="54.244.51.0/24"/>
+      <!-- Corrected New Sig & Med 11/03/15 -->
+      <node type="allow" cidr="54.171.127.192/26"/>
       <!-- domain= is special it scans the domain from the directory to build the ACL -->
       <node type="allow" domain="$${domain}"/>
       <!-- use cidr= if you wish to allow ip ranges to this domains acl. -->
