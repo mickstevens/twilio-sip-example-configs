@@ -24,15 +24,18 @@
     -->
     <list name="domains" default="deny">
       <!-- Twilio US Gateways -->
-      <node type="allow" cidr="54.84.237.137">
-      <node type="allow" cidr="54.85.131.135">
-      <node type="allow" cidr="54.85.131.188">
-      <node type="allow" cidr="54.85.123.45">
+      <node type="allow" cidr="54.84.237.137"/>
+      <node type="allow" cidr="54.85.131.135"/>
+      <node type="allow" cidr="54.85.131.188"/>
+      <node type="allow" cidr="54.85.123.45"/>
+      <!-- New Sig & Med 11/03/15 -->
+      <node type="allow" cidr="54.172.60.0/23"/>
       <!-- Twilio Euro Gateways -->
-      <node type="allow" cidr="54.72.246.65">
-      <node type="allow" cidr="54.77.209.170">
-      <node type="allow" cidr="54.77.210.162">
-      </node></node></node></node></node></node></node>
+      <node type="allow" cidr="54.72.246.65"/>
+      <node type="allow" cidr="54.77.209.170"/>
+      <node type="allow" cidr="54.77.210.162"/>
+      <!-- New Sig & Med 11/03/15 -->
+      <node type="allow" cidr="54.244.51.0/24"/>
       <!-- domain= is special it scans the domain from the directory to build the ACL -->
       <node type="allow" domain="$${domain}"/>
       <!-- use cidr= if you wish to allow ip ranges to this domains acl. -->
